@@ -1,0 +1,86 @@
+hi 
+after installing jest with npm and run it on add.test.js with `npm test` with config [package.json]:
+`
+  "scripts": {
+    "test": "jest"
+  }
+`
+it works fine 
+but if i try `npn test -- --watch` or package.json: 
+`
+  "scripts": {
+    "test": "jest --watch"
+  }
+`
+it throws this **error**:
+```
+> expansify@1.0.0 test /Porjects/expensify-app
+> jest "--watch"
+
+Error: watch /Porjects/expensify-app ENOSPC
+    at _errnoException (util.js:1022:11)
+    at FSWatcher.start (fs.js:1382:19)
+    at Object.fs.watch (fs.js:1408:11)
+    at NodeWatcher.watchdir (/Porjects/expensify-app/node_modules/sane/src/node_watcher.js:150:20)
+    at new NodeWatcher (/Porjects/expensify-app/node_modules/sane/src/node_watcher.js:46:8)
+    at createWatcher (/Porjects/expensify-app/node_modules/jest-haste-map/build/index.js:575:23)
+    at Array.map (<anonymous>)
+    at HasteMap._watch (/Porjects/expensify-app/node_modules/jest-haste-map/build/index.js:703:25)
+    at _buildPromise._buildFileMap.then.then.hasteMap (/Porjects/expensify-app/node_modules/jest-haste-map/build/index.js:262:21)
+    at <anonymous>
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! expansify@1.0.0 test: `jest "--watch"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the expansify@1.0.0 test script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ali/.npm/_logs/2020-04-17T13_03_02_305Z-debug.log
+```
+full package.json is :
+```
+{
+  "name": "expansify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andrew Mead",
+  "license": "MIT",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "^0.28.11",
+    "jest": "^20.0.4",
+    "live-server": "^1.2.0",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "normalize.css": "^7.0.0",
+    "react": "15.6.1",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^12.7.1",
+    "react-dom": "15.6.1",
+    "react-modal": "^2.4.1",
+    "react-redux": "^5.1.2",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.18.2",
+    "uuid": "^3.4.0",
+    "validator": "8.0.0",
+    "webpack": "3.1.0",
+    "webpack-dev-server": "^2.11.5"
+  }
+}
+``` 
