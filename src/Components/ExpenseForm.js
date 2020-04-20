@@ -10,7 +10,7 @@ export default class ExpenseForm extends React.Component {
 			description: props.expense ? props.expense.description : '',
 			note: props.expense ? props.expense.note : '',
 			amount: props.expense ? (props.expense.amount / 100).toString() : '',
-			createdAt: props.expense ? moment(props.expense.createAt) : moment(),
+			createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
 			calendarFocused: false,
 			error: ''
 		}
@@ -29,9 +29,9 @@ export default class ExpenseForm extends React.Component {
 			this.setState(() => ({ amount }))
 		}
 	}
-	onDateChange = (createAt) => {
-		if (createAt) {
-			this.setState(() => ({ createAt }))
+	onDateChange = (createdAt) => {
+		if (createdAt) {
+			this.setState(() => ({ createdAt }))
 		}
 	}
 	onFocusChange = ({ focused }) => {
@@ -47,7 +47,7 @@ export default class ExpenseForm extends React.Component {
 			this.props.onSubmit({
 				description: this.state.description,
 				amount: parseFloat(this.state.amount, 10) * 100,
-				createAt: this.state.createdAt.valueOf(),
+				createdAt: this.state.createdAt.valueOf(),
 				note: this.state.note
 			});
 		}

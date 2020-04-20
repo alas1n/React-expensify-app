@@ -13,6 +13,7 @@ exports[`should render ExpnesListItem whit Expenses 1`] = `
   <p>
     195
     -
+    Thursday, January 1st 1970, 3:30:00 am
   </p>
 </div>
 `;

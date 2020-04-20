@@ -24,7 +24,7 @@ test('should give back added expense with manual input', () => {
 	const expenseData = {
 		description: 'description',
 		amount: 1234,
-		createAt: 4321,
+		createdAt: 4321,
 		note: 'note'
 	}
 	const action = addExpenses(expenseData)
@@ -42,7 +42,7 @@ test('should give back expense object with defult value', () => {
 		description: '',
 		note: '',
 		amount: 0,
-		createAt: 0
+		createdAt: 0
 	}
 	const action = addExpenses()
 	expect(action).toEqual({
