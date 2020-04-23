@@ -11,9 +11,9 @@ exports[`should render ExpnesListItem whit Expenses 1`] = `
     </h3>
   </Link>
   <p>
-    195
+    $1.95
     -
-    Thursday, January 1st 1970, 3:30:00 am
+    January 1st, 1970
   </p>
 </div>
 `;
