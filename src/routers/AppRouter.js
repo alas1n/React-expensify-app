@@ -9,20 +9,19 @@ import Page from '../Components/Page'
 import Header from '../Components/Header'
 
 
-
 const ApprRouter = () => (
-    <BrowserRouter>
-        <div>
-            <Header />
-            <Switch>
-                <Route path="/" component={ExpenseDashboardPage} exact={true} />
-                <Route path="/create" component={AddExpensePage} />
-                <Route path="/edit/:id" component={EditExpensePage} />
-                <Route path="/help" component={HelpExpensePage} />
-                <Route component={Page} />
-            </Switch>
-        </div>
-    </BrowserRouter>
+	<BrowserRouter>
+		<div>
+			<Header />
+			<Switch>
+				<Route path="/" component={ExpenseDashboardPage} exact={true} />
+				<Route path="/create" component={AddExpensePage} />
+				<Route path="/edit/:id" component={EditExpensePage} />
+				<Route path="/help" component={HelpExpensePage} />
+				<Route component={Page} />
+			</Switch>
+		</div>
+	</BrowserRouter>
 )
 
 export default ApprRouter
