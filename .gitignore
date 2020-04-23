@@ -1,7 +1,4 @@
 node_modules/
 package.1.json
 webpack.config-corse.js
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
+public/dist
