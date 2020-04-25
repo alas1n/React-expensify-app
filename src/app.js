@@ -9,21 +9,22 @@ import 'react-dates/lib/css/_datepicker.css'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 import moment from 'moment'
+import './firebase/firebase'
 
 
 
 const store = configureStore()
 
-store.subscribe(() => {
-    const state = store.getState();
-    const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
-    console.log(visibleExpenses)
-})
+// store.subscribe(() => {
+//     const state = store.getState();
+//     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters)
+//     console.log(visibleExpenses)
+// })
 
 
-store.dispatch(addExpenses({ description: 'Rent', createdAt: moment().subtract('1','day'), amount: 200, note: 'shiiiit not again' }))
-store.dispatch(addExpenses({ description: 'water bill', createdAt: moment().subtract('3','day'), amount: 3400, note: 'Must be share' }))
-store.dispatch(addExpenses({ description: 'Gas bill', createdAt: moment().subtract('2','day'), amount: 5100, note: 'should be more' }))
+// store.dispatch(addExpenses({ description: 'Rent', createdAt: moment().subtract('1','day'), amount: 200, note: 'shiiiit not again' }))
+// store.dispatch(addExpenses({ description: 'water bill', createdAt: moment().subtract('3','day'), amount: 3400, note: 'Must be share' }))
+// store.dispatch(addExpenses({ description: 'Gas bill', createdAt: moment().subtract('2','day'), amount: 5100, note: 'should be more' }))
 
 
 
